@@ -9,7 +9,7 @@ import math
 
 bigram_probs = {
     "<s>": {"AI": 0.6, "Production": 0.4},
-    "AI": {"improves": 0.3, "optimizes": 0.7},
+    "AI": {"improves": 0.7, "optimizes": 0.3},
     "Production": {"needs": 0.6, "uses": 0.4},
     "improves": {"efficiency": 0.6, "quality": 0.4},
     "optimizes": {"process": 1.0},
@@ -37,6 +37,20 @@ bigram_probs = {
 
 
 # GREEDY search
+
+# def greedy_search():
+#     score = 0
+#     current_word = "<s>"
+#     next_words = bigram_probs[current_word]
+#     next_word = max(next_words,key=next_words.get)
+#     score =score + math.log(next_words[next_word])
+
+#     print(next_words)
+#     print(next_word)
+#     print(next_words[next_word])
+#     print(current_word)
+#     current_word = next_word
+#     print(current_word)
 
 def greedy_search():
     current_word = "<s>"
