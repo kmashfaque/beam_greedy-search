@@ -30,8 +30,6 @@ bigram_probs = {
 
 # Probability of next word being “optimizes” is 0.3
 
-# And:
-
 # 𝑃("improves"∣"AI") = 0.7
 
 # 𝑃("optimizes"∣"AI") =0.3
