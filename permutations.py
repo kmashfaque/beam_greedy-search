@@ -7,11 +7,14 @@ end = cities[-1]
 
 remaining_cities = cities[1:-1]
 
-# print(remaining_cities)
+# print(remaining_cities)   
 
 perms = itertools.permutations(remaining_cities)
 
 # for p in perms:
 #     print(p)
-# permutations = [[start] + list(p) + [end] for p in perms]
-# print(permutations)
+permutations = [[start] + list(p) + [end] for p in perms]
+
+solutions = [
+    ()
+]
