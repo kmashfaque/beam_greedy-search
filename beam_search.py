@@ -9,7 +9,7 @@ import math
 
 bigram_probs = {
     "<s>": {"AI": 0.6, "Production": 0.4},
-    "AI": {"improves": 0.3, "optimizes": 0.7},
+    "AI": {"improves": 0.7, "optimizes": 0.3},
     "Production": {"needs": 0.6, "uses": 0.4},
     "improves": {"efficiency": 0.6, "quality": 0.4},
     "optimizes": {"process": 1.0},
