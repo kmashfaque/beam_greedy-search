@@ -58,3 +58,63 @@ import numpy as np
 # print("New Loss: ", new_loss)
 
 
+def train_linear_model(
+    x,
+    y_true,
+    weights,
+    learning_rate=0.01,
+    steps=10
+):
+    """
+    Trains a simple linear model using gradient descent
+    and prints progress at each step.
+    """
+
+    def predict(x, w):
+        return np.dot(x, w)
+
+    def mse_loss(y_pred, y_true):
+        return (y_pred - y_true) ** 2
+
+    def compute_gradient(x, y_pred, y_true):
+        error = y_pred - y_true
+        return 2 * x * error
+
+    print("Initial weights:", weights)
+    print("-" * 50)
+
+    for step in range(steps):
+        # forward pass
+        prediction = predict(x, weights)
+
+        # loss
+        loss = mse_loss(prediction, y_true)
+
+        # gradient (RECOMPUTED every step)
+        gradient = compute_gradient(x, prediction, y_true)
+
+        # weight update
+        weights = weights - learning_rate * gradient
+
+        # progress print
+        print(f"Step {step+1}")
+        print("Prediction :", prediction)
+        print("Loss       :", loss)
+        print("Gradient   :", gradient)
+        print("Weights    :", weights)
+        print("-" * 50)
+
+    return weights
+
+
+input_data = np.array([0, 3])
+target = 50
+weights = np.array([-1.0, 3.0])
+
+final_weights = train_linear_model(
+    input_data,
+    target,
+    weights,
+    learning_rate=0.01,
+    steps=10
+)
