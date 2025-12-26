@@ -139,7 +139,8 @@ def branch_bound(weight, value, c):
             item+=1
                 
     print("item selected", item_selected)
-    print("item", item)
+
 
 
 branch_bound(weight, value, c)
+
